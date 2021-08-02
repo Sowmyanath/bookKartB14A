@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "bookKartB14A"
+  "defaultProject": "bookKartB14A",
+  "cli": {
+    "analytics": "378274f9-7b8d-48b6-998b-9ceab570ea89"
+  }
 }
