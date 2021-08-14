@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { BookcartComponent } from './bookcart/bookcart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavigateCheckGuard } from './navigate-check.guard';
 
 
 const routes: Routes = [
@@ -13,6 +14,9 @@ const routes: Routes = [
   {path: 'Bookcart', component: BookcartComponent},
   {path: 'login', component: LoginComponent},
   {path: 'payment', component: PaymentComponent, canActivate: [AuthGuard]},
+  { path: 'navigate', 
+   canLoad : [NavigateCheckGuard],
+  loadChildren: () => import('./navigate/navigate.module').then(m => m.NavigateModule) },
   // {path: '**', redirectTo :'login'},
 ];
 
